@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+import os
+os.system('pip install scikit-learn')
+import sklearn  # Now import sklearn after installation
+
 
 df = pd.read_csv("./train.csv")
 
