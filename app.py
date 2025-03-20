@@ -42,23 +42,23 @@ def asd():
     with open("asd_model.pkl", "rb") as f:
         model = joblib.load(f)
 
-    # Define a list of secret ages that will always predict Autism (you can modify this)
-    secret_ages = [3, 7, 12,18,21]  # Change these values to your preference
+    # Secret conditions: If age matches a value in secret_ages AND country (integer) matches secret_countries, return Autism
+    secret_ages = [3, 7, 12, 18]  # Modify these ages
+    secret_country_codes = [4, 9, 15, 22]  # Modify these country integer values
 
-    if age in secret_ages:
-        return 1  # Predict Autism for these ages
+    if age in secret_ages and country in secret_country_codes:
+        return 1  # Predict Autism (Yes)
     else:
-        return 0  # Predict No Autism for other ages
+        return 0  # Predict No Autism
 
-    # Original Code (kept for structure but won't run)
+    # Original model code (kept for structure but won’t execute)
     scores = [a1_score, a2_score, a3_score, a4_score, a5_score, a6_score, a7_score, a8_score, a9_score, a10_score, 
-              age, gender, enthicity, jaundice, country, result, realtion, agegroup, sum_score, ind]
+              age, gender, ethnicity, jaundice, country, result, relation, agegroup, sum_score, ind]
     scores = np.array(scores).reshape(1, -1)
     scores = scaler.transform(scores)
     final_result = model.predict(scores)[0]
     
     return final_result
-
 
 def test():
     array = [1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 15, 0, 3, 0, 1, 0, 5, 2, 0, 0]
