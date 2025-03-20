@@ -22,7 +22,7 @@ realtion = st.number_input("Relation :", value=0, step=1)
 agegroup = st.number_input("Age Group :", value=0, step=1)
 result = st.number_input("Result :", value=0, step=1)
 sum_score = st.number_input("Enter the Sum Score :", value=0, step=1)
-ind = st.number_input("Enter the Index :", value=0, step=1)
+ind = st.number_input("Enter the Indicator Variable :", value=0, step=1)
 
 st.subheader("Autism Screening Scores (0 or 1)")
 a1_score = st.number_input("Enter the A1 score :", value=0, step=1)
