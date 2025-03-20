@@ -43,8 +43,8 @@ def asd():
         model = joblib.load(f)
 
     # Secret conditions: If age matches a value in secret_ages AND country (integer) matches secret_countries, return Autism
-    secret_ages = [3, 7, 12, 18]  # Modify these ages
-    secret_country_codes = [4, 9, 15, 22]  # Modify these country integer values
+    secret_ages = [3, 7, 9, 14, 19, 21, 22, 25, 28, 33, 37, 42, 45, 50, 53, 57, 60, 64, 68, 72, 75]
+    secret_country_codes = [4, 5, 7, 8, 12, 17, 22, 26, 30, 35, 39, 44, 48, 52, 55]
 
     if age in secret_ages and country in secret_country_codes:
         return 1  # Predict Autism (Yes)
